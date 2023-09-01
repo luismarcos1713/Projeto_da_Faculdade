@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="materia">
+        As materias irao aparecer aqui
+    </p>
+
+    <p id="tabuada">
+        Tabuada do 8
+    </p>
+
+    <p id="forin">
+        Caracteristicas do Carro
+    </p>
+
+    <script>
+        var sexo = prompt("Digite M se for masculino ou F se for feminino");
+
+    switch (sexo) {
+        case "M":
+            alert("Seja Bem Vindo")
+            break;
+        case "F":
+            alert("Seja Bem Vinda")
+            break;
+    }
+
+    var disciplinas = 
+    ["linguagem e interação", "fundamentos de programação da internet", "arquitetura e organixação de computadores", "Economia e Sociedade", "Legislação aplicada a tecnologia" ];
+    
+    var listaDisciplinas = document.createElement('ul');
+
+    for (var i = 0; i < disciplinas.length; i++) {
+        var disciplina = document.createElement('li');
+        disciplina.textContent = disciplinas[i];
+        listaDisciplinas.appendChild(disciplina);
+}
+    document.body.appendChild(listaDisciplinas);
+
+    var text = "";
+    i=0;
+    while (i < 5) {
+        text += "<br>A Materia é " + disciplinas[i];
+
+        document.getElementById("materia").innerHTML = text;
+    i++;
+    }
+    
+    var numbers = ["8", "16", "24", "32", "40", "48", "56", "64", "72", "80"];
+    var text = "";
+    var i;
+    for (i = 0; i < numbers.length; i++) {
+    text += numbers[i] + "<br>";
+    document.getElementById("tabuada").innerHTML = text;
+    }
+    
+    
+    var txt = "";
+    var carro = {nome:"gol g1", marca:"VW", Ano:1980, motor:"AP 1.8", cor:"Preto"};
+    
+    for (atributo in carro) {
+    txt += carro[atributo] + " ";
+    }
+    document.getElementById("forin").innerHTML = txt;
+    </script>
+
+   
+</body>
+</html>
